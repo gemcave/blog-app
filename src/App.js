@@ -3,10 +3,17 @@ import Navigation from './components/navigation';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PageRenderer from './page-renderer';
 
+
 function App() {
+
+	const user = {
+		firstName: 'Nikolai',
+		lastName: 'Coder'
+	}
+
   return (
 		<div>
-			<Navigation />
+			<Navigation user={user} />
 			<Switch>
 				<Route path="/:page" component={PageRenderer} />
 				<Route path="/" component={() => <Redirect to="/home" />} />
